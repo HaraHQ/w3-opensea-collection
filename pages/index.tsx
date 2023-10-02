@@ -58,7 +58,7 @@ export default Home;
 
 
 export const getServerSideProps: GetServerSideProps<HomeProps> = async (context) => {
-  const response = await fetch('http://localhost:3000/api/nft/collection', { method: 'GET', cache: 'force-cache', next: { revalidate: 3600 } });
+  const response = await fetch('https://w3-opensea.vercel.app/api/nft/collection', { method: 'GET', cache: 'force-cache', next: { revalidate: 3600 } });
   const json = await response.json();
 
   return {
